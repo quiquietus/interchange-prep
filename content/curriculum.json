@@ -1,85 +1,348 @@
 {
-  "lines": [
-    { "id": "js", "code": "JS", "name": "JavaScript", "subject": "MERN", "stations": [
-      { "id": "js-execution-context", "title": "Execution context and hoisting" },
-      { "id": "js-closures", "title": "Scope and closures" },
-      { "id": "js-this", "title": "this, call, apply, bind" },
-      { "id": "js-prototypes", "title": "Prototypes and classes" },
-      { "id": "js-event-loop", "title": "The event loop" },
-      { "id": "js-promises", "title": "Promises and async/await" },
-      { "id": "js-values", "title": "Values, references, equality" },
-      { "id": "js-functional", "title": "Higher-order functions, debounce, throttle" }
-    ]},
-    { "id": "node", "code": "ND", "name": "Node and Express", "subject": "MERN", "stations": [
-      { "id": "node-runtime", "title": "How Node runs your code" },
-      { "id": "express-middleware", "title": "Express and the middleware chain" },
-      { "id": "rest-api", "title": "REST API design" },
-      { "id": "auth-jwt", "title": "Authentication: hashing, sessions, JWT" },
-      { "id": "websockets", "title": "WebSockets and real-time" },
-      { "id": "node-scaling", "title": "Scaling Node: queues, caching, rate limits" }
-    ]},
-    { "id": "mongo", "code": "DB", "name": "MongoDB", "subject": "MERN", "stations": [
-      { "id": "mongo-modeling", "title": "Documents and data modeling" },
-      { "id": "mongo-indexes", "title": "Indexes and query plans" },
-      { "id": "mongo-aggregation", "title": "The aggregation pipeline" },
-      { "id": "mongo-transactions", "title": "Transactions, replication, sharding" }
-    ]},
-    { "id": "react", "code": "RE", "name": "React", "subject": "MERN", "stations": [
-      { "id": "react-rendering", "title": "Rendering, reconciliation, keys" },
-      { "id": "react-state", "title": "State, props and hooks" },
-      { "id": "react-effects", "title": "Effects and the component lifecycle" },
-      { "id": "react-performance", "title": "Performance and memoization" },
-      { "id": "react-app-state", "title": "App state, data fetching, routing" }
-    ]},
-    { "id": "cn", "code": "CN", "name": "Computer Networks", "subject": "Core CS", "stations": [
-      { "id": "cn-layers", "title": "Layering: OSI and TCP/IP" },
-      { "id": "cn-url-journey", "title": "What happens when you open a URL" },
-      { "id": "cn-tcp-udp", "title": "TCP, UDP, handshakes, congestion" },
-      { "id": "cn-http", "title": "HTTP/1.1, HTTP/2, HTTP/3, HTTPS, TLS" },
-      { "id": "cn-dns-ip", "title": "DNS, IP addressing, subnetting, NAT" },
-      { "id": "cn-routing", "title": "Routing, switching, ARP" }
-    ]},
-    { "id": "dbms", "code": "DM", "name": "DBMS", "subject": "Core CS", "stations": [
-      { "id": "dbms-er-relational", "title": "ER model and the relational model" },
-      { "id": "dbms-normalization", "title": "Keys and normalization" },
-      { "id": "dbms-sql", "title": "SQL: joins, grouping, window functions" },
-      { "id": "dbms-indexing", "title": "Indexing: B+ trees and hashing" },
-      { "id": "dbms-transactions", "title": "ACID, isolation levels, anomalies" },
-      { "id": "dbms-concurrency", "title": "Locking, MVCC, deadlocks, recovery" }
-    ]},
-    { "id": "os", "code": "OS", "name": "Operating Systems", "subject": "Core CS", "stations": [
-      { "id": "os-processes", "title": "Processes, threads, context switches" },
-      { "id": "os-scheduling", "title": "CPU scheduling" },
-      { "id": "os-sync", "title": "Synchronization: locks, semaphores, monitors" },
-      { "id": "os-deadlock", "title": "Deadlocks" },
-      { "id": "os-memory", "title": "Paging, virtual memory, page replacement" },
-      { "id": "os-files-io", "title": "File systems and I/O" }
-    ]},
-    { "id": "oop", "code": "OO", "name": "OOP", "subject": "Core CS", "stations": [
-      { "id": "oop-pillars", "title": "Encapsulation, abstraction, inheritance, polymorphism" },
-      { "id": "oop-cpp-internals", "title": "Virtual functions, vtables, object layout" },
-      { "id": "oop-composition", "title": "Composition, interfaces, abstract classes" },
-      { "id": "oop-solid", "title": "SOLID principles" }
-    ]},
-    { "id": "lld", "code": "LD", "name": "Low-Level Design", "subject": "Design", "stations": [
-      { "id": "lld-uml", "title": "UML: class, sequence, use case, state diagrams" },
-      { "id": "lld-creational", "title": "Creational patterns" },
-      { "id": "lld-structural", "title": "Structural patterns" },
-      { "id": "lld-behavioral", "title": "Behavioral patterns" },
-      { "id": "lld-case-studies", "title": "Case studies: parking lot, rate limiter, splitwise" }
-    ]},
-    { "id": "hld", "code": "HD", "name": "High-Level Design", "subject": "Design", "stations": [
-      { "id": "hld-framework", "title": "A framework for any design question" },
-      { "id": "hld-scaling", "title": "Load balancing and horizontal scaling" },
-      { "id": "hld-caching", "title": "Caching and CDNs" },
-      { "id": "hld-data", "title": "Replication, sharding, CAP, consistency" },
-      { "id": "hld-messaging", "title": "Queues, streams, event-driven systems" },
-      { "id": "hld-case-studies", "title": "Case studies: URL shortener, chat, feed" }
-    ]}
-  ],
-  "projects": [
-    { "id": "collab-editor", "title": "Real-time collaborative editor", "tagline": "Several people edit one document at once, with live cursors and no lost edits.", "plannedStations": [] },
-    { "id": "online-judge", "title": "Online judge", "tagline": "Submit code, run it in a sandbox against hidden tests, get a verdict in seconds.", "plannedStations": ["auth-jwt", "rest-api", "node-scaling", "mongo-indexes", "mongo-aggregation", "js-promises", "react-app-state", "os-processes", "hld-messaging"] },
-    { "id": "ecommerce", "title": "E-commerce with payments", "tagline": "Catalog, cart, orders and payments where money and stock never go out of sync.", "plannedStations": ["auth-jwt", "rest-api", "mongo-modeling", "mongo-transactions", "mongo-indexes", "node-scaling", "react-app-state", "dbms-transactions", "hld-caching"] }
-  ]
+ "lines": [
+  {
+   "id": "js",
+   "code": "JS",
+   "name": "JavaScript",
+   "subject": "MERN",
+   "stations": [
+    {
+     "id": "js-execution-context",
+     "title": "Execution context and hoisting"
+    },
+    {
+     "id": "js-closures",
+     "title": "Scope and closures"
+    },
+    {
+     "id": "js-this",
+     "title": "this, call, apply, bind"
+    },
+    {
+     "id": "js-prototypes",
+     "title": "Prototypes and classes"
+    },
+    {
+     "id": "js-event-loop",
+     "title": "The event loop"
+    },
+    {
+     "id": "js-promises",
+     "title": "Promises and async/await"
+    },
+    {
+     "id": "js-values",
+     "title": "Values, references, equality"
+    },
+    {
+     "id": "js-functional",
+     "title": "Higher-order functions, debounce, throttle"
+    }
+   ]
+  },
+  {
+   "id": "node",
+   "code": "ND",
+   "name": "Node and Express",
+   "subject": "MERN",
+   "stations": [
+    {
+     "id": "node-runtime",
+     "title": "How Node runs your code"
+    },
+    {
+     "id": "express-middleware",
+     "title": "Express and the middleware chain"
+    },
+    {
+     "id": "rest-api",
+     "title": "REST API design"
+    },
+    {
+     "id": "auth-jwt",
+     "title": "Authentication: hashing, sessions, JWT"
+    },
+    {
+     "id": "websockets",
+     "title": "WebSockets and real-time"
+    },
+    {
+     "id": "node-scaling",
+     "title": "Scaling Node: queues, caching, rate limits"
+    }
+   ]
+  },
+  {
+   "id": "mongo",
+   "code": "DB",
+   "name": "MongoDB",
+   "subject": "MERN",
+   "stations": [
+    {
+     "id": "mongo-modeling",
+     "title": "Documents and data modeling"
+    },
+    {
+     "id": "mongo-indexes",
+     "title": "Indexes and query plans"
+    },
+    {
+     "id": "mongo-aggregation",
+     "title": "The aggregation pipeline"
+    },
+    {
+     "id": "mongo-transactions",
+     "title": "Transactions, replication, sharding"
+    }
+   ]
+  },
+  {
+   "id": "react",
+   "code": "RE",
+   "name": "React",
+   "subject": "MERN",
+   "stations": [
+    {
+     "id": "react-rendering",
+     "title": "Rendering, reconciliation, keys"
+    },
+    {
+     "id": "react-state",
+     "title": "State, props and hooks"
+    },
+    {
+     "id": "react-effects",
+     "title": "Effects and the component lifecycle"
+    },
+    {
+     "id": "react-performance",
+     "title": "Performance and memoization"
+    },
+    {
+     "id": "react-app-state",
+     "title": "App state, data fetching, routing"
+    }
+   ]
+  },
+  {
+   "id": "hld",
+   "code": "HD",
+   "name": "High-Level Design",
+   "subject": "System design",
+   "stations": [
+    {
+     "id": "hld-framework",
+     "title": "A framework for any design question"
+    },
+    {
+     "id": "hld-scaling",
+     "title": "Load balancing and horizontal scaling"
+    },
+    {
+     "id": "hld-caching",
+     "title": "Caching and CDNs"
+    },
+    {
+     "id": "hld-data",
+     "title": "Replication, sharding, CAP, consistency"
+    },
+    {
+     "id": "hld-messaging",
+     "title": "Queues, streams, event-driven systems"
+    },
+    {
+     "id": "hld-case-studies",
+     "title": "Case studies: URL shortener, chat, feed"
+    }
+   ]
+  },
+  {
+   "id": "lld",
+   "code": "LD",
+   "name": "Low-Level Design",
+   "subject": "System design",
+   "stations": [
+    {
+     "id": "lld-uml",
+     "title": "UML: class, sequence, use case, state diagrams"
+    },
+    {
+     "id": "lld-creational",
+     "title": "Creational patterns"
+    },
+    {
+     "id": "lld-structural",
+     "title": "Structural patterns"
+    },
+    {
+     "id": "lld-behavioral",
+     "title": "Behavioral patterns"
+    },
+    {
+     "id": "lld-case-studies",
+     "title": "Case studies: parking lot, rate limiter, splitwise"
+    }
+   ]
+  },
+  {
+   "id": "cn",
+   "code": "CN",
+   "name": "Computer Networks",
+   "subject": "Core CS",
+   "stations": [
+    {
+     "id": "cn-layers",
+     "title": "Layering: OSI and TCP/IP"
+    },
+    {
+     "id": "cn-url-journey",
+     "title": "What happens when you open a URL"
+    },
+    {
+     "id": "cn-tcp-udp",
+     "title": "TCP, UDP, handshakes, congestion"
+    },
+    {
+     "id": "cn-http",
+     "title": "HTTP/1.1, HTTP/2, HTTP/3, HTTPS, TLS"
+    },
+    {
+     "id": "cn-dns-ip",
+     "title": "DNS, IP addressing, subnetting, NAT"
+    },
+    {
+     "id": "cn-routing",
+     "title": "Routing, switching, ARP"
+    }
+   ]
+  },
+  {
+   "id": "dbms",
+   "code": "DM",
+   "name": "DBMS",
+   "subject": "Core CS",
+   "stations": [
+    {
+     "id": "dbms-er-relational",
+     "title": "ER model and the relational model"
+    },
+    {
+     "id": "dbms-normalization",
+     "title": "Keys and normalization"
+    },
+    {
+     "id": "dbms-sql",
+     "title": "SQL: joins, grouping, window functions"
+    },
+    {
+     "id": "dbms-indexing",
+     "title": "Indexing: B+ trees and hashing"
+    },
+    {
+     "id": "dbms-transactions",
+     "title": "ACID, isolation levels, anomalies"
+    },
+    {
+     "id": "dbms-concurrency",
+     "title": "Locking, MVCC, deadlocks, recovery"
+    }
+   ]
+  },
+  {
+   "id": "os",
+   "code": "OS",
+   "name": "Operating Systems",
+   "subject": "Core CS",
+   "stations": [
+    {
+     "id": "os-processes",
+     "title": "Processes, threads, context switches"
+    },
+    {
+     "id": "os-scheduling",
+     "title": "CPU scheduling"
+    },
+    {
+     "id": "os-sync",
+     "title": "Synchronization: locks, semaphores, monitors"
+    },
+    {
+     "id": "os-deadlock",
+     "title": "Deadlocks"
+    },
+    {
+     "id": "os-memory",
+     "title": "Paging, virtual memory, page replacement"
+    },
+    {
+     "id": "os-files-io",
+     "title": "File systems and I/O"
+    }
+   ]
+  },
+  {
+   "id": "oop",
+   "code": "OO",
+   "name": "OOP",
+   "subject": "Core CS",
+   "stations": [
+    {
+     "id": "oop-pillars",
+     "title": "Encapsulation, abstraction, inheritance, polymorphism"
+    },
+    {
+     "id": "oop-cpp-internals",
+     "title": "Virtual functions, vtables, object layout"
+    },
+    {
+     "id": "oop-composition",
+     "title": "Composition, interfaces, abstract classes"
+    },
+    {
+     "id": "oop-solid",
+     "title": "SOLID principles"
+    }
+   ]
+  }
+ ],
+ "projects": [
+  {
+   "id": "collab-editor",
+   "title": "Real-time collaborative editor",
+   "tagline": "Several people edit one document at once, with live cursors and no lost edits.",
+   "plannedStations": []
+  },
+  {
+   "id": "online-judge",
+   "title": "Online judge",
+   "tagline": "Submit code, run it in a sandbox against hidden tests, get a verdict in seconds.",
+   "plannedStations": [
+    "auth-jwt",
+    "rest-api",
+    "node-scaling",
+    "mongo-indexes",
+    "mongo-aggregation",
+    "js-promises",
+    "react-app-state",
+    "os-processes",
+    "hld-messaging"
+   ]
+  },
+  {
+   "id": "ecommerce",
+   "title": "E-commerce with payments",
+   "tagline": "Catalog, cart, orders and payments where money and stock never go out of sync.",
+   "plannedStations": [
+    "auth-jwt",
+    "rest-api",
+    "mongo-modeling",
+    "mongo-transactions",
+    "mongo-indexes",
+    "node-scaling",
+    "react-app-state",
+    "dbms-transactions",
+    "hld-caching"
+   ]
+  }
+ ]
 }

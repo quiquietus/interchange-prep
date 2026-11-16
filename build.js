@@ -28,6 +28,7 @@ const stationLine = {};
 for (const line of cur.lines) for (const st of line.stations) { titles[st.id] = st.title; stationLine[st.id] = line.id; }
 for (const p of cur.projects) titles[p.id] = p.title;
 const projectIds = new Set(cur.projects.map(p => p.id));
+const videos = JSON.parse(fs.readFileSync(path.join(ROOT, 'content/videos.json'), 'utf8'));
 
 let runCount = 0;
 function runCode(code, file) {
@@ -160,7 +161,7 @@ for (const line of cur.lines) {
       Object.assign(entry, {
         ready: true, summary: meta.summary || '', time: meta.time || '', headings: r.headings,
         needs: meta.needs ? meta.needs.split(',').map(s => s.trim()) : [],
-        video: meta.video || '', videoTitle: meta.videoTitle || '', videoSearch: meta.videoSearch || st.title + ' explained'
+        video: (videos[st.id] || [])[0] || meta.video || '', videoTitle: (videos[st.id] || [])[1] || meta.videoTitle || '', videoSearch: meta.videoSearch || st.title + ' explained'
       });
       for (const n of entry.needs) if (!titles[n]) { console.error(`Unknown prerequisite ${n} in ${f}`); process.exit(1); }
       fs.writeFileSync(path.join(OUT, 'data', st.id + '.json'), JSON.stringify({ html: r.html }));
