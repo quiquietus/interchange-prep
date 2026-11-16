@@ -114,7 +114,7 @@
     app.innerHTML = `<div class="reader">${rail(s.line, id)}
       <article class="doc line-${s.line}">
         <header class="sign">
-          <div class="sign-top"><span class="roundel">${l.code}</span><span>${esc(l.name)} line, station ${s.n} of ${l.stations.length}</span>${s.time ? `<span>about ${esc(s.time)} min</span>` : ''}</div>
+          <div class="sign-top"><span class="roundel">${l.code}</span><span>${esc(l.name)} line, station ${s.n} of ${l.stations.length}</span>${s.time ? `<span>about ${esc(s.time)} min</span>` : ''}${s.level ? `<span class="level level-${s.level}">${{ beginner: 'Beginner', core: 'Core', advanced: 'Advanced' }[s.level]}</span>` : ''}</div>
           <h1>${esc(s.title)}</h1>
           <p class="lede">${esc(s.summary)}</p>
           ${s.needs.length ? `<p class="needs">Read first: ${s.needs.map(chip).join(' ')}</p>` : ''}

@@ -229,3 +229,6 @@ td:first-child { font-weight: 600; }
 }
 .prose { overflow-wrap: break-word; }
 @media (max-width: 640px) { .chip { white-space: normal; border-radius: 14px; } }
+
+.level { padding: 1px 10px; border-radius: 999px; font-weight: 600; font-size: 13px; border: 1.5px solid currentColor; }
+.level-beginner { color: #17803D; } .level-core { color: #1E6FD9; } .level-advanced { color: #A23BB5; }

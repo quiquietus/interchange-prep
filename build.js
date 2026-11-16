@@ -31,10 +31,11 @@ const projectIds = new Set(cur.projects.map(p => p.id));
 const videos = JSON.parse(fs.readFileSync(path.join(ROOT, 'content/videos.json'), 'utf8'));
 
 let runCount = 0;
-function runCode(code, file) {
-  const tmp = path.join(ROOT, 'tmp', `run-${++runCount}.js`);
+function runCode(code, file, name) {
+  const tmp = path.join(ROOT, 'tmp', name || `run-${++runCount}.js`);
+  if (name) runCount++;
   fs.writeFileSync(tmp, code);
-  const r = spawnSync('node', [tmp], { encoding: 'utf8', timeout: 15000, cwd: ROOT });
+  const r = spawnSync('node', ['--expose-gc', tmp], { encoding: 'utf8', timeout: 15000, cwd: ROOT });
   if (r.status !== 0) {
     console.error(`\nRUN FAILED in ${file}:\n${code}\n--- stderr ---\n${r.stderr}\n${r.stdout}`);
     process.exit(1);
@@ -69,9 +70,11 @@ function render(md, ctx) {
     const [lang, flag] = info.split(/\s+/);
     if (lang === 'mermaid') return `<figure class="diagram"><pre class="mermaid">${esc(text)}</pre></figure>`;
     if (lang === 'output') return `<div class="out out-expected"><div class="out-tag">Expected result</div><pre>${esc(text)}</pre></div>`;
-    let html = `<div class="code"><div class="code-tag">${esc(lang || 'code')}</div><pre><code>${highlight(text, lang)}</code></pre></div>`;
-    if (flag === 'run') {
-      const out = runCode(text, ctx.file);
+    const named = (flag || '').match(/^(file|run)=(.+)$/);
+    if (named && named[1] === 'file') fs.writeFileSync(path.join(ROOT, 'tmp', named[2]), text);
+    let html = `<div class="code"><div class="code-tag">${esc(named ? named[2] : lang || 'code')}</div><pre><code>${highlight(text, lang)}</code></pre></div>`;
+    if (flag === 'run' || (named && named[1] === 'run')) {
+      const out = runCode(text, ctx.file, named && named[2]);
       html += `<div class="out out-ran"><div class="out-tag">Output, ran on Node ${process.versions.node.split('.')[0]}</div><pre>${esc(out)}</pre></div>`;
     }
     return html;
@@ -154,7 +157,7 @@ for (const line of cur.lines) {
   index.lines.push({ id: line.id, name: line.name, subject: line.subject, code: line.code, stations: line.stations.map(s => s.id) });
   line.stations.forEach((st, n) => {
     const f = path.join(ROOT, 'content/modules', st.id + '.md');
-    const entry = { title: st.title, line: line.id, n: n + 1, ready: false, usedIn: usedIn[st.id] || [] };
+    const entry = { title: st.title, line: line.id, n: n + 1, level: st.level || '', ready: false, usedIn: usedIn[st.id] || [] };
     if (fs.existsSync(f)) {
       const { meta, body } = frontmatter(fs.readFileSync(f, 'utf8'));
       const r = renderBody(body, f);

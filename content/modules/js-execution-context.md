@@ -1,6 +1,7 @@
 ---
 summary: Before one line of your code runs, the engine has already made a pass over it. That pass explains hoisting, the temporal dead zone and the call stack.
 time: 25
+needs: js-objects-arrays
 videoSearch: JavaScript execution context hoisting visualized
 ---
 ## The problem this solves

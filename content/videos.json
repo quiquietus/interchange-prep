@@ -1,36 +1,170 @@
 {
-"js-execution-context":["zdGfo6I1yrA","JavaScript Visualized: Execution Contexts, by Lydia Hallie (12 min)"],
-"js-closures":["6Ixyltr8_R0","JavaScript Visualized: Closures, by Lydia Hallie (12 min)"],
-"js-this":["gvicrj31JOM","JavaScript this Keyword, by Programming with Mosh (8 min)"],
-"js-prototypes":["LdYXpkqOsAs","JavaScript Prototypes Explained Visually, by Outside The Normal (3 min)"],
-"js-event-loop":["eiC58R16hb8","JavaScript Visualized: Event Loop, Web APIs, (Micro)task Queue, by Lydia Hallie (13 min)"],
-"js-promises":["Xs1EMmBLpn4","JavaScript Visualized: Promise Execution, by Lydia Hallie (9 min)"],
-"js-values":["-hBJz2PPIVE","Reference Vs Value In JavaScript, by Web Dev Simplified (15 min)"],
-"js-functional":["cjIswDCKgu0","Learn Debounce And Throttle In 16 Minutes, by Web Dev Simplified"],
-"node-runtime":["5LyHLEulqV8","Node.js Event Loop Explained in 3D: Call Stack, Microtasks, Libuv, by Code in Motion (12 min)"],
-"express-middleware":["lY6icfhap2o","Learn Express Middleware In 14 Minutes, by Web Dev Simplified"],
-"rest-api":["-mN3VyJuCjM","What Is REST API? Examples And How To Use It, by ByteByteGo (5 min)"],
-"auth-jwt":["UBUNrFtufWo","Session vs Token Authentication in 100 Seconds, by Fireship"],
-"websockets":["1BfCnjr_Vjg","WebSockets in 100 Seconds and Beyond with Socket.io, by Fireship (9 min)"],
-"node-scaling":["YXkOdWBwqaA","Rate Limiter System Design: Token Bucket, Leaky Bucket, Scaling, by ByteByteGo (8 min)"],
-"mongo-modeling":["NQ1li804gWk","11 Guidelines for Embedding or Referencing in MongoDB, by MongoDB (6 min)"],
-"mongo-indexes":["yCOEWrEFLTA","MongoDB Compound Indexes: Workload Analysis and Index Field Order, by MongoDB (14 min)"],
-"mongo-aggregation":["acvyf-Im-NU","Master MongoDB Aggregation Pipeline: $match, $unwind, $group, $project, by MongoDB (5 min)"],
-"mongo-transactions":["J2rF35syaDA","MongoDB Architecture for Beginners: Data Hierarchy, Replication and Sharding, by MongoDB (6 min)"],
-"react-rendering":["thsUZEzL8ts","The Magic of React's Reconciliation, by Code Sketched (5 min)"],
-"react-state":["_I1xCNyGDVo","Why React setState Doesn't Update Immediately: State Snapshots and Batching, by Runtime Visuals (4 min)"],
-"react-effects":["0ZJgIjIuY7U","Learn useEffect In 13 Minutes, by Web Dev Simplified"],
-"react-performance":["0lX5Sun7zWc","React.memo vs useCallback vs useMemo Explained with Examples, by Gajanan Tech Hub (13 min)"],
-"react-app-state":["novnyCaa7To","React Query in 100 Seconds, by Fireship"],
-"hld-framework":["i7twT3x5yv8","System Design Interview: A Step-By-Step Guide, by ByteByteGo (10 min)"],
-"hld-scaling":["ZcNaOuxcuyA","How Load Balancers Work, with Animation, by ByteMonk (6 min)"],
-"hld-caching":["dGAgxozNWFE","Cache Systems Every Developer Should Know, by ByteByteGo (6 min)"],
-"hld-data":["BHqjEjzAicA","CAP Theorem Simplified, by ByteByteGo (6 min)"],
-"hld-messaging":["Rmcrysdi-Ac","Pub/Sub vs Message Queue vs Event Streaming (Kafka), by Coding With Taimoor (7 min)"],
-"hld-case-studies":["16d35un5a9Q","System Design Interview Question: Design URL Shortener, by Hayk Simonyan (13 min)"],
-"lld-uml":["6XrL5jXmTwM","UML class diagrams, by Lucid Software (12 min)"],
-"lld-creational":["MaY_MDdWkQw","The Builder Pattern Explained and Implemented, by Geekific (8 min)"],
-"lld-structural":["yeyNiJXfBjE","Structural Design Patterns: Adapter, Facade, Decorator, Proxy and others, by Hungry Back Dev (4 min)"],
-"lld-behavioral":["-oLDJ2dbadA","The Observer Pattern Explained and Implemented, by Geekific (7 min)"],
-"lld-case-studies":["5J-GelmZZ98","Parking Lot Design: LLD with Full Code Implementation, by Genie Ashwani (16 min)"]
+ "js-execution-context": [
+  "zdGfo6I1yrA",
+  "JavaScript Visualized: Execution Contexts, by Lydia Hallie (12 min)"
+ ],
+ "js-closures": [
+  "6Ixyltr8_R0",
+  "JavaScript Visualized: Closures, by Lydia Hallie (12 min)"
+ ],
+ "js-this": [
+  "gvicrj31JOM",
+  "JavaScript this Keyword, by Programming with Mosh (8 min)"
+ ],
+ "js-prototypes": [
+  "LdYXpkqOsAs",
+  "JavaScript Prototypes Explained Visually, by Outside The Normal (3 min)"
+ ],
+ "js-event-loop": [
+  "eiC58R16hb8",
+  "JavaScript Visualized: Event Loop, Web APIs, (Micro)task Queue, by Lydia Hallie (13 min)"
+ ],
+ "js-promises": [
+  "Xs1EMmBLpn4",
+  "JavaScript Visualized: Promise Execution, by Lydia Hallie (9 min)"
+ ],
+ "js-values": [
+  "-hBJz2PPIVE",
+  "Reference Vs Value In JavaScript, by Web Dev Simplified (15 min)"
+ ],
+ "js-functional": [
+  "cjIswDCKgu0",
+  "Learn Debounce And Throttle In 16 Minutes, by Web Dev Simplified"
+ ],
+ "node-runtime": [
+  "5LyHLEulqV8",
+  "Node.js Event Loop Explained in 3D: Call Stack, Microtasks, Libuv, by Code in Motion (12 min)"
+ ],
+ "express-middleware": [
+  "lY6icfhap2o",
+  "Learn Express Middleware In 14 Minutes, by Web Dev Simplified"
+ ],
+ "rest-api": [
+  "-mN3VyJuCjM",
+  "What Is REST API? Examples And How To Use It, by ByteByteGo (5 min)"
+ ],
+ "auth-jwt": [
+  "UBUNrFtufWo",
+  "Session vs Token Authentication in 100 Seconds, by Fireship"
+ ],
+ "websockets": [
+  "1BfCnjr_Vjg",
+  "WebSockets in 100 Seconds and Beyond with Socket.io, by Fireship (9 min)"
+ ],
+ "node-scaling": [
+  "YXkOdWBwqaA",
+  "Rate Limiter System Design: Token Bucket, Leaky Bucket, Scaling, by ByteByteGo (8 min)"
+ ],
+ "mongo-modeling": [
+  "NQ1li804gWk",
+  "11 Guidelines for Embedding or Referencing in MongoDB, by MongoDB (6 min)"
+ ],
+ "mongo-indexes": [
+  "yCOEWrEFLTA",
+  "MongoDB Compound Indexes: Workload Analysis and Index Field Order, by MongoDB (14 min)"
+ ],
+ "mongo-aggregation": [
+  "acvyf-Im-NU",
+  "Master MongoDB Aggregation Pipeline: $match, $unwind, $group, $project, by MongoDB (5 min)"
+ ],
+ "mongo-transactions": [
+  "J2rF35syaDA",
+  "MongoDB Architecture for Beginners: Data Hierarchy, Replication and Sharding, by MongoDB (6 min)"
+ ],
+ "react-rendering": [
+  "thsUZEzL8ts",
+  "The Magic of React's Reconciliation, by Code Sketched (5 min)"
+ ],
+ "react-state": [
+  "_I1xCNyGDVo",
+  "Why React setState Doesn't Update Immediately: State Snapshots and Batching, by Runtime Visuals (4 min)"
+ ],
+ "react-effects": [
+  "0ZJgIjIuY7U",
+  "Learn useEffect In 13 Minutes, by Web Dev Simplified"
+ ],
+ "react-performance": [
+  "0lX5Sun7zWc",
+  "React.memo vs useCallback vs useMemo Explained with Examples, by Gajanan Tech Hub (13 min)"
+ ],
+ "react-app-state": [
+  "novnyCaa7To",
+  "React Query in 100 Seconds, by Fireship"
+ ],
+ "hld-framework": [
+  "i7twT3x5yv8",
+  "System Design Interview: A Step-By-Step Guide, by ByteByteGo (10 min)"
+ ],
+ "hld-scaling": [
+  "ZcNaOuxcuyA",
+  "How Load Balancers Work, with Animation, by ByteMonk (6 min)"
+ ],
+ "hld-caching": [
+  "dGAgxozNWFE",
+  "Cache Systems Every Developer Should Know, by ByteByteGo (6 min)"
+ ],
+ "hld-data": [
+  "BHqjEjzAicA",
+  "CAP Theorem Simplified, by ByteByteGo (6 min)"
+ ],
+ "hld-messaging": [
+  "Rmcrysdi-Ac",
+  "Pub/Sub vs Message Queue vs Event Streaming (Kafka), by Coding With Taimoor (7 min)"
+ ],
+ "hld-case-studies": [
+  "16d35un5a9Q",
+  "System Design Interview Question: Design URL Shortener, by Hayk Simonyan (13 min)"
+ ],
+ "lld-uml": [
+  "6XrL5jXmTwM",
+  "UML class diagrams, by Lucid Software (12 min)"
+ ],
+ "lld-creational": [
+  "MaY_MDdWkQw",
+  "The Builder Pattern Explained and Implemented, by Geekific (8 min)"
+ ],
+ "lld-structural": [
+  "yeyNiJXfBjE",
+  "Structural Design Patterns: Adapter, Facade, Decorator, Proxy and others, by Hungry Back Dev (4 min)"
+ ],
+ "lld-behavioral": [
+  "-oLDJ2dbadA",
+  "The Observer Pattern Explained and Implemented, by Geekific (7 min)"
+ ],
+ "lld-case-studies": [
+  "5J-GelmZZ98",
+  "Parking Lot Design: LLD with Full Code Implementation, by Genie Ashwani (16 min)"
+ ],
+ "js-basics": [
+  "cKC2QboMN34",
+  "JavaScript Data Types and Variables Easily Explained, by DevStart (8 min)"
+ ],
+ "js-functions-flow": [
+  "fRRRkognpOs",
+  "Learn JavaScript Arrow Functions in 8 minutes, by Bro Code"
+ ],
+ "js-objects-arrays": [
+  "UHZcJyVXtLo",
+  "JavaScript Destructuring in 8 minutes, by Bro Code"
+ ],
+ "js-errors": [
+  "cFTFtuEQ-10",
+  "try, catch, finally, throw: error handling in JavaScript, by freeCodeCamp (6 min)"
+ ],
+ "js-modules": [
+  "6_JNPmjSevo",
+  "Import vs Require: The Biggest JavaScript Divide, by Matt Pocock (4 min)"
+ ],
+ "js-iterators": [
+  "IJ6EgdiI_wU",
+  "Learn JavaScript Generators In 12 Minutes, by Web Dev Simplified"
+ ],
+ "js-memory": [
+  "YoB1TgZTv3o",
+  "JavaScript Memory Management Explained: How Garbage Collection Works, by Coding 4 Dev (6 min)"
+ ],
+ "js-build-it": [
+  "aDA22QwnAQI",
+  "JavaScript Interview Question: Implement a Promise Polyfill, by Js For Interview (10 min)"
+ ]
 }

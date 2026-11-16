@@ -7,36 +7,84 @@
    "subject": "MERN",
    "stations": [
     {
+     "id": "js-basics",
+     "title": "Values, variables and types",
+     "level": "beginner"
+    },
+    {
+     "id": "js-functions-flow",
+     "title": "Functions, conditions and loops",
+     "level": "beginner"
+    },
+    {
+     "id": "js-objects-arrays",
+     "title": "Objects, arrays and destructuring",
+     "level": "beginner"
+    },
+    {
      "id": "js-execution-context",
-     "title": "Execution context and hoisting"
+     "title": "Execution context and hoisting",
+     "level": "core"
     },
     {
      "id": "js-closures",
-     "title": "Scope and closures"
+     "title": "Scope and closures",
+     "level": "core"
     },
     {
      "id": "js-this",
-     "title": "this, call, apply, bind"
+     "title": "this, call, apply, bind",
+     "level": "core"
     },
     {
      "id": "js-prototypes",
-     "title": "Prototypes and classes"
-    },
-    {
-     "id": "js-event-loop",
-     "title": "The event loop"
-    },
-    {
-     "id": "js-promises",
-     "title": "Promises and async/await"
+     "title": "Prototypes and classes",
+     "level": "core"
     },
     {
      "id": "js-values",
-     "title": "Values, references, equality"
+     "title": "Values, references, equality",
+     "level": "core"
     },
     {
      "id": "js-functional",
-     "title": "Higher-order functions, debounce, throttle"
+     "title": "Higher-order functions, debounce, throttle",
+     "level": "core"
+    },
+    {
+     "id": "js-event-loop",
+     "title": "The event loop",
+     "level": "core"
+    },
+    {
+     "id": "js-promises",
+     "title": "Promises and async/await",
+     "level": "core"
+    },
+    {
+     "id": "js-errors",
+     "title": "Errors and defensive code",
+     "level": "core"
+    },
+    {
+     "id": "js-modules",
+     "title": "Modules: CommonJS and ES modules",
+     "level": "advanced"
+    },
+    {
+     "id": "js-iterators",
+     "title": "Iterators, generators and async iteration",
+     "level": "advanced"
+    },
+    {
+     "id": "js-memory",
+     "title": "Memory, garbage collection and leaks",
+     "level": "advanced"
+    },
+    {
+     "id": "js-build-it",
+     "title": "Build it yourself: Promise, EventEmitter, bind",
+     "level": "advanced"
     }
    ]
   },
