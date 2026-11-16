@@ -166,5 +166,29 @@
  "js-build-it": [
   "aDA22QwnAQI",
   "JavaScript Interview Question: Implement a Promise Polyfill, by Js For Interview (10 min)"
+ ],
+ "node-http-basics": [
+  "eesqK59rhGA",
+  "The HTTP and the Web: the Request-Response Cycle, by The TechCave (9 min)"
+ ],
+ "node-essentials": [
+  "ENrzD9HAZK4",
+  "Node.js Ultimate Beginner's Guide in 7 Easy Steps, by Fireship (16 min)"
+ ],
+ "express-first-app": [
+  "-MTSQjw5DrM",
+  "RESTful APIs in 100 Seconds: Build an API from Scratch with Node.js Express, by Fireship (11 min)"
+ ],
+ "node-validation-security": [
+  "FsB_nRGdeLs",
+  "API Security Explained: Rate Limiting, CORS, SQL Injection, CSRF, XSS and More, by Hayk Simonyan (9 min)"
+ ],
+ "node-testing": [
+  "x2e5_kSnOtE",
+  "Integration Testing in Node.js with Jest and Supertest, by Coding 4 Dev (6 min)"
+ ],
+ "node-production": [
+  "gAkwW2tuIqE",
+  "Learn Docker in 7 Easy Steps, by Fireship (11 min)"
  ]
 }

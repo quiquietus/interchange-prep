@@ -95,28 +95,64 @@
    "subject": "MERN",
    "stations": [
     {
+     "id": "node-http-basics",
+     "title": "How the web talks: clients, servers, HTTP",
+     "level": "beginner"
+    },
+    {
+     "id": "node-essentials",
+     "title": "Node essentials: files, paths, environment, npm",
+     "level": "beginner"
+    },
+    {
+     "id": "express-first-app",
+     "title": "Your first Express API",
+     "level": "beginner"
+    },
+    {
      "id": "node-runtime",
-     "title": "How Node runs your code"
+     "title": "How Node runs your code",
+     "level": "core"
     },
     {
      "id": "express-middleware",
-     "title": "Express and the middleware chain"
+     "title": "Express and the middleware chain",
+     "level": "core"
     },
     {
      "id": "rest-api",
-     "title": "REST API design"
+     "title": "REST API design",
+     "level": "core"
+    },
+    {
+     "id": "node-validation-security",
+     "title": "Validation and API security",
+     "level": "core"
     },
     {
      "id": "auth-jwt",
-     "title": "Authentication: hashing, sessions, JWT"
+     "title": "Authentication: hashing, sessions, JWT",
+     "level": "core"
+    },
+    {
+     "id": "node-testing",
+     "title": "Testing a Node API",
+     "level": "core"
     },
     {
      "id": "websockets",
-     "title": "WebSockets and real-time"
+     "title": "WebSockets and real-time",
+     "level": "advanced"
     },
     {
      "id": "node-scaling",
-     "title": "Scaling Node: queues, caching, rate limits"
+     "title": "Scaling Node: queues, caching, rate limits",
+     "level": "advanced"
+    },
+    {
+     "id": "node-production",
+     "title": "Running in production: config, logging, Docker, deploys",
+     "level": "advanced"
     }
    ]
   },

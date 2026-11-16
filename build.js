@@ -35,7 +35,7 @@ function runCode(code, file, name) {
   const tmp = path.join(ROOT, 'tmp', name || `run-${++runCount}.js`);
   if (name) runCount++;
   fs.writeFileSync(tmp, code);
-  const r = spawnSync('node', ['--expose-gc', tmp], { encoding: 'utf8', timeout: 15000, cwd: ROOT });
+  const r = spawnSync('node', ['--expose-gc', '--test-reporter=spec', tmp], { encoding: 'utf8', timeout: 15000, cwd: ROOT });
   if (r.status !== 0) {
     console.error(`\nRUN FAILED in ${file}:\n${code}\n--- stderr ---\n${r.stderr}\n${r.stdout}`);
     process.exit(1);
