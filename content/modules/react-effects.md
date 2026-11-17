@@ -39,17 +39,23 @@ sequenceDiagram
 
 ### Example 1: the three dependency forms
 
-```jsx
-useEffect(() => { console.log('A: after every render'); });
-useEffect(() => { console.log('B: after the first render only'); }, []);
-useEffect(() => { console.log('C: after first render and whenever userId changes'); }, [userId]);
+```jsx run
+function Demo({ userId }) {
+  useEffect(() => { console.log('  A: runs after every render'); });
+  useEffect(() => { console.log('  B: runs after the first render only'); }, []);
+  useEffect(() => {
+    console.log('  C: runs because userId is', userId);
+    return () => console.log('  C cleanup for userId', userId);
+  }, [userId]);
+  return null;
+}
+console.log('mount');                         render(<Demo userId={1} note="x" />);
+console.log('re-render, userId unchanged');   render(<Demo userId={1} note="y" />);
+console.log('re-render, userId changed');     render(<Demo userId={2} note="y" />);
+console.log('unmount');                       unmount();
 ```
 
-```output
-mount:                       A B C
-re-render, userId unchanged: A
-re-render, userId changed:   A C
-```
+Note the cleanup lines: before effect C re-runs for `userId` 2, React first runs the cleanup from the run for `userId` 1. On unmount, the last cleanup runs.
 
 React compares each dependency with its value from the previous render using `Object.is`. If any differ, the effect re-runs.
 
@@ -103,22 +109,26 @@ The effect callback itself cannot be `async` (it would return a promise where Re
 
 ### Example 4: the stale closure
 
-```jsx
-function Timer() {
+```jsx run
+function Timer({ useUpdater }) {
   const [seconds, setSeconds] = useState(0);
   useEffect(() => {
-    const id = setInterval(() => setSeconds(seconds + 1), 1000);
+    const id = setInterval(() => useUpdater ? setSeconds(s => s + 1) : setSeconds(seconds + 1), 10);
     return () => clearInterval(id);
   }, []);
   return <p>{seconds}</p>;
 }
+(async () => {
+  render(<Timer key="stale" />);
+  await wait(100);
+  console.log('setSeconds(seconds + 1) after 100 ms:', text(), '(stuck)');
+  render(<Timer key="fixed" useUpdater />);
+  await wait(100);
+  console.log('setSeconds(s => s + 1) kept counting :', Number(text()) > 3);
+})();
 ```
 
-```output
-shows 0, then 1, then stays at 1 forever
-```
-
-The effect ran once, after the first render. Its callback is a closure over that render's `seconds`, which is `0` forever ([[js-closures]], and the snapshot idea from [[react-state]]). Every tick computes `0 + 1`.
+In the first timer the effect ran once, after the first render. Its callback is a closure over that render's `seconds`, which is `0` forever ([[js-closures]], and the snapshot idea from [[react-state]]). Every tick computes `0 + 1`.
 
 | Fix | Code | Why it works |
 | --- | --- | --- |

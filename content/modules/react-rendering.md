@@ -49,7 +49,7 @@ JSX is syntax for building these objects. That explains its rules: one root (a f
 
 ### Example 2: what re-renders
 
-```jsx
+```jsx run
 function App() {
   const [count, setCount] = useState(0);
   console.log('render App');
@@ -63,12 +63,12 @@ function App() {
 }
 function Header() { console.log('render Header'); return <h1>Shop</h1>; }
 function Total({ value }) { console.log('render Total'); return <p>{value}</p>; }
-```
 
-```output
-on first load:    render App, render Header, render Total
-after one click:  render App, render Header, render Total
-DOM changes after the click: the button's text node and the <p>'s text node. The <h1> is untouched.
+render(<App />);
+const h1Before = document.querySelector('h1');
+console.log('--- one click ---');
+click('button');
+console.log('the <h1> is still the same DOM node:', document.querySelector('h1') === h1Before);
 ```
 
 When a component's state changes, React re-renders **that component and all of its descendants**, whether or not their props changed. `Header` rendered again (its function ran) but produced the same elements, so the commit did nothing for it. Re-rendering is not the same as updating the DOM. Skipping unnecessary renders is [[react-performance]].
@@ -92,25 +92,24 @@ Toggling `isEditing` swaps the type at that position, so the `input` is created 
 
 For a list of children, position alone is not enough. Insert an item at the front and every position shifts.
 
-```jsx
-{todos.map((todo, index) => <TodoRow key={index} todo={todo} />)}
+```jsx run
+function List({ items, keyBy }) {
+  return <ul>{items.map((item, index) => <li key={keyBy === 'index' ? index : item.id}>{item.text}</li>)}</ul>;
+}
+const before = [{ id: 'a', text: 'buy milk' }, { id: 'b', text: 'write notes' }];
+const after = [{ id: 'c', text: 'call mom' }, ...before];
+
+for (const keyBy of ['index', 'id']) {
+  render(<List key={keyBy} items={before} keyBy={keyBy} />);
+  const milkNode = [...document.querySelectorAll('li')].find(li => li.textContent === 'buy milk');
+  render(<List key={keyBy} items={after} keyBy={keyBy} />);
+  console.log(`key = ${keyBy.padEnd(5)}: the DOM node that showed "buy milk" now shows "${milkNode.textContent}"`);
+}
 ```
 
-```output
-before: key 0 = "buy milk" (checkbox ticked in local state), key 1 = "write notes"
-insert "call mom" at the front
-after:  key 0 = "call mom" (inherits the ticked checkbox!), key 1 = "buy milk", key 2 = "write notes"
-```
+A new item was inserted at the front. With the **index** as key, React matched old key 0 to new key 0, concluded "same row, new text", and rewrote the node that used to be "buy milk" (and every node after it). Any local state in that row, a ticked checkbox or typed text, would now sit beside the wrong item; [[react-lists-forms]] shows that happening.
 
-With the index as key, React matches old key 0 to new key 0 and concludes "same component, new props". The local state (the ticked checkbox, text typed into an input, focus) stays at position 0 and is now attached to the wrong item.
-
-```jsx
-{todos.map(todo => <TodoRow key={todo.id} todo={todo} />)}
-```
-
-```output
-React matches by id: "buy milk" keeps its state and DOM node and simply moves; one new row is created for "call mom".
-```
+With the **id** as key, React recognized "buy milk" as the same item in a new position, kept its node and its state, and created one new node.
 
 A **key** tells React which item is which across renders. It must be **stable** (the same item has the same key every render) and **unique among siblings**.
 

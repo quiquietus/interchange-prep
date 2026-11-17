@@ -23,19 +23,18 @@ A component is a function, and a function's local variables vanish when it retur
 
 ### Example 1: state is a snapshot
 
-```jsx
+```jsx run
 function Counter() {
   const [count, setCount] = useState(0);
   function handleClick() {
     setCount(count + 1);
-    console.log(count);
+    console.log('inside the handler, right after setCount, count is still', count);
   }
   return <button onClick={handleClick}>{count}</button>;
 }
-```
-
-```output
-first click: logs 0, button then shows 1
+render(<Counter />);
+click('button');
+console.log('the button now shows', text());
 ```
 
 `count` is a `const` inside this particular call of `Counter`. In the first render it is `0`, and `handleClick` is a closure over that `0` ([[js-closures]]). `setCount` does not change the variable; it asks React to call `Counter` again, and that *next* call gets `count = 1`. Each render has its own `count`, its own handlers, its own everything.
@@ -49,44 +48,48 @@ flowchart LR
 
 ### Example 2: batching and the updater function
 
-```jsx
-function handleTriple() {
-  setCount(count + 1);
-  setCount(count + 1);
-  setCount(count + 1);
+```jsx run
+let renders = 0;
+function Counter() {
+  const [a, setA] = useState(0);
+  const [b, setB] = useState(0);
+  renders++;
+  const plain = () => { setA(a + 1); setA(a + 1); setA(a + 1); };
+  const updater = () => { setB(n => n + 1); setB(n => n + 1); setB(n => n + 1); };
+  return <div><button onClick={plain}>plain</button><button onClick={updater}>updater</button><p>a = {a}, b = {b}</p></div>;
 }
-function handleTripleCorrect() {
-  setCount(c => c + 1);
-  setCount(c => c + 1);
-  setCount(c => c + 1);
-}
+render(<Counter />);
+renders = 0; click('text=plain');
+console.log('three setA(a + 1) calls    ->', document.querySelector('p').textContent, '| renders caused:', renders);
+renders = 0; click('text=updater');
+console.log('three setB(n => n + 1) calls ->', document.querySelector('p').textContent, '| renders caused:', renders);
 ```
 
-```output
-handleTriple:        count goes 0 -> 1   (three times "set to 0 + 1"), one re-render
-handleTripleCorrect: count goes 0 -> 3   (each updater receives the latest pending value), one re-render
-```
-
-Two things are happening. **Batching**: React waits until the event handler finishes and then renders once, not three times. **Snapshot**: in the first version `count` is `0` on all three lines. Passing a function (`c => c + 1`) tells React "compute from whatever the latest value is", so updates queue up correctly. Rule: **if the new state depends on the old state, use the updater form.**
+Two things are happening. **Batching**: React waits until the event handler finishes and then renders once, not three times ("renders caused: 1"). **Snapshot**: in the plain version `a` is `0` on all three lines, so it is "set to 1" three times. Passing a function (`c => c + 1`) tells React "compute from whatever the latest value is", so updates queue up correctly. Rule: **if the new state depends on the old state, use the updater form.**
 
 ### Example 3: never mutate, always replace
 
-```jsx
-const [todos, setTodos] = useState([{ id: 1, text: 'learn hooks', done: false }]);
-
-function addWrong(text) {
-  todos.push({ id: Date.now(), text, done: false });
-  setTodos(todos);
+```jsx run
+function Todos() {
+  const [todos, setTodos] = useState(['learn hooks']);
+  const addWrong = () => { todos.push('pushed'); setTodos(todos); };
+  const addRight = () => setTodos(prev => [...prev, 'copied']);
+  const remove = text => setTodos(prev => prev.filter(t => t !== text));
+  return (
+    <div>
+      <button onClick={addWrong}>wrong</button><button onClick={addRight}>right</button><button onClick={() => remove('learn hooks')}>remove first</button>
+      <p>{todos.join(', ')}</p>
+    </div>
+  );
 }
-function add(text) { setTodos(prev => [...prev, { id: Date.now(), text, done: false }]); }
-function toggle(id) { setTodos(prev => prev.map(t => t.id === id ? { ...t, done: !t.done } : t)); }
-function remove(id) { setTodos(prev => prev.filter(t => t.id !== id)); }
+render(<Todos />);
+const shown = () => document.querySelector('p').textContent;
+click('text=wrong');        console.log('after push + setTodos(same array):', shown());
+click('text=right');        console.log('after setTodos(new array)        :', shown());
+click('text=remove first'); console.log('after filter                     :', shown());
 ```
 
-```output
-addWrong: the array is changed, but the screen does not update
-add / toggle / remove: screen updates
-```
+The first click changed the array but the screen did not move. The second click rendered, and the item pushed earlier suddenly appeared alongside the new one: the data had been changed behind React's back.
 
 React decides whether state changed with `Object.is(oldValue, newValue)`. A mutated array is still the same reference, so React sees "no change" and skips the render. Create a new array or object every time, using the non-mutating tools from [[js-values]] and [[js-functional]]: spread, `map`, `filter`.
 

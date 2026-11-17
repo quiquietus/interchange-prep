@@ -190,5 +190,25 @@
  "node-production": [
   "gAkwW2tuIqE",
   "Learn Docker in 7 Easy Steps, by Fireship (11 min)"
+ ],
+ "react-first-components": [
+  "Tn6-PIqc4UM",
+  "React in 100 Seconds, by Fireship"
+ ],
+ "react-props-events": [
+  "uvEAvxWvwOs",
+  "Props in React explained, by Bro Code (12 min)"
+ ],
+ "react-lists-forms": [
+  "fGxKOmCuH5w",
+  "React Keys and Lists: Complete Tutorial, by Cosden Solutions (10 min)"
+ ],
+ "react-custom-hooks": [
+  "6ThXsUwLWvc",
+  "Learn Custom Hooks In 10 Minutes, by Web Dev Simplified"
+ ],
+ "react-server-rendering": [
+  "kZG3izJu7qE",
+  "Hydration Explained, by Awesome (5 min)"
  ]
 }

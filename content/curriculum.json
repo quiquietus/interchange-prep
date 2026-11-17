@@ -187,24 +187,54 @@
    "subject": "MERN",
    "stations": [
     {
+     "id": "react-first-components",
+     "title": "Components and JSX",
+     "level": "beginner"
+    },
+    {
+     "id": "react-props-events",
+     "title": "Props, events and conditional rendering",
+     "level": "beginner"
+    },
+    {
+     "id": "react-lists-forms",
+     "title": "Lists, keys and forms",
+     "level": "beginner"
+    },
+    {
      "id": "react-rendering",
-     "title": "Rendering, reconciliation, keys"
+     "title": "Rendering, reconciliation, keys",
+     "level": "core"
     },
     {
      "id": "react-state",
-     "title": "State, props and hooks"
+     "title": "State, props and hooks",
+     "level": "core"
     },
     {
      "id": "react-effects",
-     "title": "Effects and the component lifecycle"
+     "title": "Effects and the component lifecycle",
+     "level": "core"
+    },
+    {
+     "id": "react-custom-hooks",
+     "title": "Custom hooks and refs",
+     "level": "core"
     },
     {
      "id": "react-performance",
-     "title": "Performance and memoization"
+     "title": "Performance and memoization",
+     "level": "advanced"
     },
     {
      "id": "react-app-state",
-     "title": "App state, data fetching, routing"
+     "title": "App state, data fetching, routing",
+     "level": "advanced"
+    },
+    {
+     "id": "react-server-rendering",
+     "title": "Server rendering, hydration and Next.js",
+     "level": "advanced"
     }
    ]
   },

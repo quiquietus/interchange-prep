@@ -31,6 +31,14 @@ const projectIds = new Set(cur.projects.map(p => p.id));
 const videos = JSON.parse(fs.readFileSync(path.join(ROOT, 'content/videos.json'), 'utf8'));
 
 let runCount = 0;
+const esbuild = require('esbuild');
+const JSX_PRELUDE = `const { React, act, render, unmount, html, text, click, type, submit, wait, flush } = require('../kit/react-kit.js');
+const { useState, useEffect, useRef, useMemo, useCallback, useReducer, useContext, createContext, memo, Fragment, useLayoutEffect, useId, forwardRef, Suspense, lazy } = React;
+`;
+function runJsx(code, file) {
+  const js = esbuild.transformSync(code, { loader: 'jsx', jsx: 'transform', format: 'cjs' }).code;
+  return runCode(JSX_PRELUDE + js + '\n;setTimeout(() => process.exit(0), 300).unref();', file);
+}
 function runCode(code, file, name) {
   const tmp = path.join(ROOT, 'tmp', name || `run-${++runCount}.js`);
   if (name) runCount++;
@@ -74,8 +82,10 @@ function render(md, ctx) {
     if (named && named[1] === 'file') fs.writeFileSync(path.join(ROOT, 'tmp', named[2]), text);
     let html = `<div class="code"><div class="code-tag">${esc(named ? named[2] : lang || 'code')}</div><pre><code>${highlight(text, lang)}</code></pre></div>`;
     if (flag === 'run' || (named && named[1] === 'run')) {
-      const out = runCode(text, ctx.file, named && named[2]);
-      html += `<div class="out out-ran"><div class="out-tag">Output, ran on Node ${process.versions.node.split('.')[0]}</div><pre>${esc(out)}</pre></div>`;
+      const isJsx = lang === 'jsx';
+      const out = isJsx ? runJsx(text, ctx.file) : runCode(text, ctx.file, named && named[2]);
+      const label = isJsx ? `Output, rendered with React ${require('react').version.split('.')[0]} in a simulated browser` : `Output, ran on Node ${process.versions.node.split('.')[0]}`;
+      html += `<div class="out out-ran"><div class="out-tag">${label}</div><pre>${esc(out)}</pre></div>`;
     }
     return html;
   };
