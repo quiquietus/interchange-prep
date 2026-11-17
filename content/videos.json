@@ -210,5 +210,49 @@
  "react-server-rendering": [
   "kZG3izJu7qE",
   "Hydration Explained, by Awesome (5 min)"
+ ],
+ "mongo-crud": [
+  "-bt_y4Loofg",
+  "MongoDB in 100 Seconds, by Fireship"
+ ],
+ "mongo-queries": [
+  "ofme2o29ngU",
+  "MongoDB Crash Course, by Web Dev Simplified (30 min; queries start early)"
+ ],
+ "mongoose": [
+  "Gh5Os_nNQ20",
+  "Mongoose Explained: Schemas and Models, by Tannu Ranga (12 min)"
+ ],
+ "hld-building-blocks": [
+  "RqfaTIWc3LQ",
+  "Reverse Proxy vs API Gateway vs Load Balancer, by ByteByteGo (3 min)"
+ ],
+ "hld-microservices": [
+  "NdeTGlZ__Do",
+  "Monolithic vs Microservice Architecture: Which To Use and When, by Alex Hyett (11 min)"
+ ],
+ "hld-reliability": [
+  "dJI2saoM5_k",
+  "Circuit Breaker Pattern in Microservices, by ByteMonk (10 min)"
+ ],
+ "hld-case-studies-2": [
+  "DGtalg5efCw",
+  "Uber: System Design Interview Question, by TechPrep (16 min)"
+ ],
+ "oop-pillars": [
+  "pTB0EiLXUC8",
+  "Object-Oriented Programming, Simplified, by Programming with Mosh (8 min)"
+ ],
+ "oop-composition": [
+  "_hb_oRhASuw",
+  "Composition Over Inheritance Explained, by Awesome (5 min)"
+ ],
+ "oop-solid": [
+  "yxf2spbpTSw",
+  "Introduction to SOLID Principles in 8 Minutes, by in28minutes"
+ ],
+ "lld-case-studies-2": [
+  "d4ePRLTGB8w",
+  "Elevator System Design: Low Level Design Interview, by NodePrism (4 min)"
  ]
 }

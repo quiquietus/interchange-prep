@@ -163,20 +163,39 @@
    "subject": "MERN",
    "stations": [
     {
+     "id": "mongo-crud",
+     "title": "Documents and CRUD",
+     "level": "beginner"
+    },
+    {
+     "id": "mongo-queries",
+     "title": "Queries: operators, projection, sorting, paging",
+     "level": "beginner"
+    },
+    {
      "id": "mongo-modeling",
-     "title": "Documents and data modeling"
+     "title": "Documents and data modeling",
+     "level": "core"
     },
     {
      "id": "mongo-indexes",
-     "title": "Indexes and query plans"
+     "title": "Indexes and query plans",
+     "level": "core"
+    },
+    {
+     "id": "mongoose",
+     "title": "Mongoose: schemas, validation, middleware",
+     "level": "core"
     },
     {
      "id": "mongo-aggregation",
-     "title": "The aggregation pipeline"
+     "title": "The aggregation pipeline",
+     "level": "advanced"
     },
     {
      "id": "mongo-transactions",
-     "title": "Transactions, replication, sharding"
+     "title": "Transactions, replication, sharding",
+     "level": "advanced"
     }
    ]
   },
@@ -245,28 +264,82 @@
    "subject": "System design",
    "stations": [
     {
+     "id": "hld-building-blocks",
+     "title": "The building blocks of every system",
+     "level": "beginner"
+    },
+    {
      "id": "hld-framework",
-     "title": "A framework for any design question"
+     "title": "A framework for any design question",
+     "level": "core"
     },
     {
      "id": "hld-scaling",
-     "title": "Load balancing and horizontal scaling"
+     "title": "Load balancing and horizontal scaling",
+     "level": "core"
     },
     {
      "id": "hld-caching",
-     "title": "Caching and CDNs"
+     "title": "Caching and CDNs",
+     "level": "core"
     },
     {
      "id": "hld-data",
-     "title": "Replication, sharding, CAP, consistency"
+     "title": "Replication, sharding, CAP, consistency",
+     "level": "core"
     },
     {
      "id": "hld-messaging",
-     "title": "Queues, streams, event-driven systems"
+     "title": "Queues, streams, event-driven systems",
+     "level": "core"
+    },
+    {
+     "id": "hld-microservices",
+     "title": "Monolith, microservices and API gateways",
+     "level": "advanced"
+    },
+    {
+     "id": "hld-reliability",
+     "title": "Reliability: timeouts, retries, circuit breakers",
+     "level": "advanced"
     },
     {
      "id": "hld-case-studies",
-     "title": "Case studies: URL shortener, chat, feed"
+     "title": "Case studies: URL shortener, chat, feed",
+     "level": "advanced"
+    },
+    {
+     "id": "hld-case-studies-2",
+     "title": "More case studies: ride hailing, file storage, ticket booking",
+     "level": "advanced"
+    }
+   ]
+  },
+  {
+   "id": "oop",
+   "code": "OO",
+   "name": "OOP",
+   "subject": "System design",
+   "stations": [
+    {
+     "id": "oop-pillars",
+     "title": "Classes, objects and the four pillars",
+     "level": "beginner"
+    },
+    {
+     "id": "oop-composition",
+     "title": "Composition, interfaces, abstract classes",
+     "level": "core"
+    },
+    {
+     "id": "oop-solid",
+     "title": "SOLID principles",
+     "level": "core"
+    },
+    {
+     "id": "oop-cpp-internals",
+     "title": "Virtual functions, vtables, object layout",
+     "level": "advanced"
     }
    ]
   },
@@ -278,23 +351,33 @@
    "stations": [
     {
      "id": "lld-uml",
-     "title": "UML: class, sequence, use case, state diagrams"
+     "title": "UML: class, sequence, use case, state diagrams",
+     "level": "core"
     },
     {
      "id": "lld-creational",
-     "title": "Creational patterns"
+     "title": "Creational patterns",
+     "level": "core"
     },
     {
      "id": "lld-structural",
-     "title": "Structural patterns"
+     "title": "Structural patterns",
+     "level": "core"
     },
     {
      "id": "lld-behavioral",
-     "title": "Behavioral patterns"
+     "title": "Behavioral patterns",
+     "level": "core"
     },
     {
      "id": "lld-case-studies",
-     "title": "Case studies: parking lot, rate limiter, splitwise"
+     "title": "Case studies: parking lot, rate limiter, splitwise",
+     "level": "advanced"
+    },
+    {
+     "id": "lld-case-studies-2",
+     "title": "More case studies: elevator, movie booking, logger, tic-tac-toe",
+     "level": "advanced"
     }
    ]
   },
@@ -391,30 +474,6 @@
     {
      "id": "os-files-io",
      "title": "File systems and I/O"
-    }
-   ]
-  },
-  {
-   "id": "oop",
-   "code": "OO",
-   "name": "OOP",
-   "subject": "Core CS",
-   "stations": [
-    {
-     "id": "oop-pillars",
-     "title": "Encapsulation, abstraction, inheritance, polymorphism"
-    },
-    {
-     "id": "oop-cpp-internals",
-     "title": "Virtual functions, vtables, object layout"
-    },
-    {
-     "id": "oop-composition",
-     "title": "Composition, interfaces, abstract classes"
-    },
-    {
-     "id": "oop-solid",
-     "title": "SOLID principles"
     }
    ]
   }
